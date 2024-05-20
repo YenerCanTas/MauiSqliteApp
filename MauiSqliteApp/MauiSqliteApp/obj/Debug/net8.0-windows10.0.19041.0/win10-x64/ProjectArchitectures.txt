@@ -1,0 +1,1 @@
+C:\Users\yener\source\repos\MauiSqliteApp\MauiSqliteApp\MauiSqliteApp.csproj;x64

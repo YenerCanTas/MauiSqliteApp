@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiSqliteApp.MainPage">
+    <StackLayout Spacing="5">
+        <Label Text="Student Name"
+               FontAttributes="Bold"/>
+        
+        <Entry x:Name="Stu_Name"/>
+
+        <Label Text="Department Name"
+               FontAttributes="Bold"/>
+        <Entry x:Name="Stu_Dept"/>
+
+        <Label Text="Number"
+        FontAttributes="Bold"/>
+        <Entry x:Name="Stu_Number"/>
+
+        <Button x:Name="Buton_Add" Text="Add" Clicked="Buton_Add_Clicked"/>
+
+    <ScrollView>
+        <ListView x:Name="Stu_List_View">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Spacing="5">
+                            <Label Text="{Binding ID}"/>
+                            <Label Text="{Binding Name}"/>
+
+                            <Label Text="{Binding Department}"/>
+                            <Label Text="{Binding Number}"/>
+
+
+                                <Button Text="Delete" BindingContext="{Binding ID}"
+                                    Clicked="Delete_Button_Clicked"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ScrollView>
+    <Button x:Name="Button_Show" Text="Show" Clicked="Button_Show_Clicked"/>
+
+    </StackLayout>
+
+</ContentPage>
